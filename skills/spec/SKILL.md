@@ -10,7 +10,7 @@ The user dumps what they want, often rambling. Find what they actually want, set
 
 ## 1. Ground
 
-Read before you ask. Use Explore subagents for wide reads and keep their summaries, not their dumps. Read earlier specs in `.ngoi/specs/`: don't re-ask decisions they settled, and flag any conflict. If `.ngoi/check` is missing, mention `/ngoi:setup`. The spec works without it, but review needs it.
+Read before you ask. Use Explore subagents for wide reads and keep their summaries, not their dumps. Read earlier specs in `.ngoi/specs/`: don't re-ask decisions they settled, and flag any conflict.
 
 ## 2. Play back and plan, in one message
 

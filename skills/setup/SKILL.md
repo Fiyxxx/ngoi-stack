@@ -1,6 +1,6 @@
 ---
 name: setup
-description: Prepare a repo for ngoi once. Writes a local check script and a verify guide that lets an agent run the app and use it like a real user. Use when the user types /ngoi:setup, or when ngoi build finds a repo without .ngoi/check.
+description: Prepare a repo for ngoi. Writes a local check script and a verify guide that lets an agent run the app and use it like a real user. Run by ngoi build and review when .ngoi/check is missing or no longer runs, or when the verifier reports a stale guide. Also when the user types /ngoi:setup.
 ---
 
 # Setup
@@ -28,5 +28,6 @@ Everything ngoi writes lives in `.ngoi/`, and `.ngoi/` stays out of git. Never e
    - **Journeys.** The 3 to 6 main things a user does. For each: how a user gets there, how to drive it, and the end state that proves it works.
 5. Prove it. Run `.ngoi/check` once and report the result honestly, red included. Don't fix code here. Then launch, run the health check, drive one journey, capture evidence and clean up. Confirm the evidence survived cleanup. Fix the guide until this works. A guide nobody ran is a draft.
 6. For a new app with nothing to run yet, write what exists and mark Launch as pending. The build's first unit completes it.
+7. When `.ngoi/` already exists, refresh only what's out of date and keep what still works. Fix the guide and the check script, never the product: if the app itself won't build or start, report that as a bug instead of editing the guide around it.
 
 **Reply:** what `check` runs and its current result, the surface, the journey you proved with its evidence path, and anything you couldn't automate.

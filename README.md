@@ -7,7 +7,6 @@ It doesn't trust the AI. Nothing counts as done until a separate agent has used 
 ## The flow
 
 ```
-/setup          once per repo
 /spec <dump>    you push back until it's right, then say "go"
    go           every unit is built, cleaned and reviewed, no stops
    feedback     plain messages start a small round
@@ -22,7 +21,7 @@ The `ngoi:` prefix is optional while no other command has the same name. `/revie
 
 | Type | Or let it trigger | What you get |
 |---|---|---|
-| `/setup` | when build finds no setup | `.ngoi/check` and `.ngoi/verify.md`, proven on your app once |
+| `/setup` | build and review run it when setup is missing or stale | `.ngoi/check` and `.ngoi/verify.md`, proven on your app once |
 | `/spec <dump>` | never, you type it | a short spec you approved, then the build starts |
 | `/build` | on `go`, feedback, or `pr` | the code, reviewed and committed on an `ngoi/<slug>` branch |
 | `/ngoi:review` | "review this branch / PR / comments" | an evidence table and findings sorted by what to do |
@@ -35,11 +34,12 @@ The `ngoi:` prefix is optional while no other command has the same name. `/revie
 
 ### setup
 
-Prepares a repo once. It reads the repo first (scripts, CI, README, docker-compose) and asks only what it can't see.
+Prepares a repo. You never need to run it: build and review run it when `.ngoi/check` is missing or no longer runs, or when the verifier reports a stale guide. It reads the repo first (scripts, CI, README, docker-compose) and asks only what it can't see.
 
 - **`.ngoi/check`** runs typecheck, lint and tests, reusing what CI runs. Exit 0 means green.
 - **`.ngoi/verify.md`** tells an agent how to launch the app on a free port with its own local database, drive it (browser, `curl` or CLI), capture evidence, clean up, and walk the 3 to 6 main user journeys.
 - It proves the guide by launching the app and driving one journey. A guide nobody ran is a draft.
+- When `.ngoi/` already exists, it refreshes only what's out of date. It fixes the guide, never the product: an app that won't start is reported as a bug.
 - `.ngoi/` goes in `.git/info/exclude`, so nothing ngoi writes reaches git.
 
 ### spec

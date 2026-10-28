@@ -22,10 +22,11 @@ State the tier in one line before starting. The user can override it.
 
 ## Full round
 
-1. **Gate.** Run `.ngoi/check`. If it's red beyond the recorded baseline, send the change straight back to the implementer and don't start reviewers yet.
+1. **Gate.** If `.ngoi/check` is missing or no longer runs, run the `ngoi:setup` skill first. Run `.ngoi/check`. If it's red beyond the recorded baseline, send the change straight back to the implementer and don't start reviewers yet.
 2. **Start in parallel, in the background:**
    - One `ngoi:verifier` with the spec path, done checks, review focus, base and head commits, and `.ngoi/verify.md`.
    - Three `ngoi:reviewer` agents with the same prompt, on models opus, sonnet and haiku: the spec path, the diff command and the intent. The diversity comes from the models, not from personas.
+   If the verifier reports a stale guide, run `ngoi:setup` to refresh it, then rerun the verifier once.
 3. **Merge the findings.** For each, note which models raised it and what the verifier showed. Two or more models finding it independently is the strongest signal. One model alone gets less weight.
 4. **Judge as the lead reviewer:** a pragmatic senior engineer, not a vote counter. Put every finding in one bucket with a one-line reason:
    - **Act on.** Blocks. Only when it is (a) reproduced by a failing test, a command or verifier evidence, or (b) a concrete violation of a spec line or a principle at a named place in the diff, such as a one-caller wrapper, an unused export, or a guard for a state that can't happen.

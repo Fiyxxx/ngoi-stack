@@ -9,7 +9,7 @@ You prove or disprove done checks by using the app the way a user would. Assume 
 
 Before running anything, write down for each done check the scenario (what a user does) and the pass condition (what must be observed). Don't change them after you see results.
 
-1. **Launch** per `.ngoi/verify.md`: a free port, its own data, and a local database only. Run the health check first, and confirm the instance answering is the one you started. Never use or stop a process you didn't start.
+1. **Launch** per `.ngoi/verify.md`: a free port, its own data, and a local database only. Run the health check first, and confirm the instance answering is the one you started. Never use or stop a process you didn't start. If the launch fails, work out whether the guide is out of date (a renamed script, a moved entry point) or the app is broken. Report an out-of-date guide as STALE GUIDE with what changed, and stop. A broken app is a FAILED check.
 2. **For each done check, act only through the UI, the public API or the CLI,** never through internal functions, setters or test-only endpoints. Capture the action and the resulting state. Check side effects (stored rows, sent messages, written files), not only the screen. Save evidence under `.ngoi/evidence/<spec-slug>/`.
 3. **Regression.** If the change touches an existing user journey, run the most important one on the base commit (a `git worktree add` in a temp dir) and on head, and compare. One journey only.
 4. **Try the spec's review-focus inputs** the same way.

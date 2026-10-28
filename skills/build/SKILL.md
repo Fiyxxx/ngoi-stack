@@ -10,7 +10,7 @@ You are the coordinator. You brief, read diffs and decide. Implementer agents wr
 ## Start
 
 - Read the spec. If you are on the default branch, create `ngoi/<slug>`. Never build on main.
-- If `.ngoi/check` is missing, run the `ngoi:setup` skill first. For a new app, the first unit completes setup.
+- If `.ngoi/check` is missing or no longer runs (a command, script or path that's gone), run the `ngoi:setup` skill first. The user never runs setup themselves. For a new app, the first unit completes setup.
 - Run `.ngoi/check` once and record the baseline. Checks that already fail aren't yours to fix. List them in the report.
 - Append `build started <time>` to the spec's Log.
 
