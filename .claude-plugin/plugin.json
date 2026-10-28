@@ -5,5 +5,11 @@
   "author": {
     "name": "Hans"
   },
-  "keywords": ["spec", "review", "verification", "unslop"]
+  "license": "MIT",
+  "keywords": [
+    "spec",
+    "review",
+    "verification",
+    "unslop"
+  ]
 }
