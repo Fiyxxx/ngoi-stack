@@ -1,0 +1,9 @@
+{
+  "name": "ngoi",
+  "version": "0.2.0",
+  "description": "Not Gonna Overengineer It. Short specs you push back on, autonomous builds, and independent review that proves the change on the real app.",
+  "author": {
+    "name": "Hans"
+  },
+  "keywords": ["spec", "review", "verification", "unslop"]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "ngoi-local",
+  "description": "Local marketplace for the ngoi plugin",
+  "owner": {
+    "name": "Hans"
+  },
+  "plugins": [
+    {
+      "name": "ngoi",
+      "description": "Not Gonna Overengineer It. Short specs you push back on, autonomous builds, and independent review that proves the change on the real app.",
+      "version": "0.2.0",
+      "source": "./"
+    }
+  ]
+}
