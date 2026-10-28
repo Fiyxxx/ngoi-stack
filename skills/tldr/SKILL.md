@@ -1,6 +1,6 @@
 ---
 name: tldr
-description: Catch the user up on what happened in this session, short and plain, with what's verified and what needs them. Use when the user types /tldr or asks for a summary, recap or catch-up.
+description: Catch the user up on what happened in this session, short and plain, with what's verified and what needs them. Use when the user types /tldr, asks for a summary, recap or catch-up, or asks what's next, what the next steps are or where things stand.
 ---
 
 # TLDR

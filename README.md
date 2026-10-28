@@ -29,7 +29,7 @@ The `ngoi:` prefix is optional while no other command has the same name. `/revie
 | `/understand` | any why or how question | an answer with file:line for every claim |
 | `/unslop` | "clean this up" | AI tells removed from code, wording and UI |
 | `/systematic-debugging` | any bug or failing test | the root cause, shown to you before the fix |
-| `/tldr` | "catch me up", "summarise" | where things stand in about 150 words |
+| `/tldr` | "catch me up", "what's next?" | where things stand in about 150 words |
 
 ## Skills
 
